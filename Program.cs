@@ -8,8 +8,7 @@ namespace ConsoleApps2
         static void Main()
         { Console.Clear();
           Console.Title = "Assignment 2. >By: Maja Tägt>";
-            Calculate calculate = new Calculate();
-            calculate.Sum();
+
 
 
             ContinueToNextPart("Temperature Conversion++++++++");
@@ -42,6 +41,10 @@ namespace ConsoleApps2
                 Console.WriteLine("Continue with another round? y/n: ");
                 answerCont = Console.ReadLine();
             } while (answerCont.ToUpper() == "Y");
+            MathWorks mathworks = new MathWorks();
+            mathworks.Calculate();
+            mathworks.SumNumbers();
+            mathworks.PrintEvenNumbers();
         }
         
 
