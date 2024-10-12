@@ -42,9 +42,12 @@ namespace ConsoleApps2
                 answerCont = Console.ReadLine();
             } while (answerCont.ToUpper() == "Y");
             MathWorks mathworks = new MathWorks();
-            mathworks.Calculate();
-            mathworks.SumNumbers();
-            mathworks.PrintEvenNumbers();
+            var (firstnumber, secondNumber) = mathworks.Calculate();
+            //mathworks.SumNumbers();
+            //mathworks.PrintEvenNumbers();
+            //mathworks.CalculateSquareRoot();
+            mathworks.PrintEvenNumbers(firstnumber,secondNumber);
+            mathworks.PrintOddNumbers(firstnumber, secondNumber);
         }
         
 

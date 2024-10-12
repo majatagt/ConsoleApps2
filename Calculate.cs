@@ -1,17 +1,15 @@
-﻿public class MathWorks
+﻿using System;
+using System.Linq;
+using System.Collections.Generic;
+
+public class MathWorks
 {
-    //static as there should not be instance varialbes
-    public static int number1 = 0;
-    public static int number2 = 0;
-    public static double total;
-    public static double total2;
-
-
-
-    public void Calculate()
+    public static (int,int) Calculate()
     {
         bool number1 = false;
         int firstNumberInt = 0;
+        bool number2 = false;
+        int secondNumberInt = 0;
         while (!number1)
         {
             Console.WriteLine("Let's calculate the sum of two numbers!");
@@ -27,8 +25,6 @@
                 Console.WriteLine("Invalid input - please enter numeric values. ");
             }
 
-            bool number2 = false;
-            int secondNumberInt = 0;
             while (!number2)
             {
                 Console.WriteLine("Please give the second number: ");
@@ -42,27 +38,68 @@
                 {
                     Console.WriteLine("Invalid input - please enter numeric values. ");
                 }
+                
             }
+            return (firstNumberInt, secondNumberInt);
+
+
         }
+
     }
 
-    public void SumNumbers(int firstNumberInt, int secondNumberInt)
+    public void SumNumbers(int firstNumber, int secondNumber)
     {
         {
-        double total = firstNumberInt + secondNumberInt;
-        Console.WriteLine($"The sum of numbers {firstNumberInt} and {secondNumberInt} is: {total}");
+        double total = firstNumber + secondNumber;
+        Console.WriteLine($"The sum of numbers {firstNumber} and {secondNumber} is: {total}");
 
         }
     }
-    public void PrintEvenNumbers(int firstNumberInt, int secondNumberInt)
+
+    public void PrintEvenNumbers(int startNumber, int endNumber)
     {
-      if (firstNumberInt % 2 != 0) //check that the first number is even, if not even then start from the next even number
+      if (startNumber % 2 != 0) //check that the first number is even, if not even then start from the next even number
       {
-        firstNumberInt++;
+            startNumber++;
       }
-      for (int number = firstNumberInt; number <= secondNumberInt; number += 2)
-      Console.WriteLine($"The even numbers between {firstNumberInt} and {secondNumberInt} is: {number}");
-      }
+      for (int numbers = startNumber; numbers <= endNumber; numbers +=2) 
+        {
+            Console.WriteLine(numbers);
+        }
+       
+    }
+
+
+
+    public void PrintOddNumbers(int startNumber, int endNumber)
+    {
+        if (startNumber % 2 == 0)
+        {
+            startNumber++;
+        }
+        for (int numbers = startNumber; numbers <= endNumber; numbers += 2)
+        {
+            Console.WriteLine(numbers);
+        }
+
+    }
+
+    //using a nested loop, calculates the square root of numbers within the range.
+    //In each iteration, it should calculate from the counter's current value to the end number.
+    public void CalculateSquareRoot(int firstNumber, int secondNumber) 
+    {
+        for (int sqrt = firstNumber; sqrt <= secondNumber; sqrt++)
+        {
+            for (int numbers = sqrt; numbers <= secondNumber; numbers++)
+
+            {
+                double sqrt1 = Math.Sqrt(numbers);
+                Console.WriteLine($"the square root of {sqrt} is {sqrt1}");
+            }
+        }
+
+    }
 }
+
 
 
